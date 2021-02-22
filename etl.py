@@ -14,6 +14,8 @@ os.environ['AWS_SECRET_ACCESS_KEY']=config['AWS_SECRET_ACCESS_KEY']
 
 
 def create_spark_session():
+    """This function creates a spark session that can interact via AWS S3
+    """
     spark = SparkSession \
         .builder \
         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
@@ -22,6 +24,21 @@ def create_spark_session():
 
 
 def process_song_data(spark, input_data, output_data):
+    """This function loads the song metadata files into the spark cluster, performs
+    whatever processing is necessary, then splits and saves the resulting data
+    into the dimension tables necessary for representing the metadata of the
+    songs
+
+    Parameters
+    ==========
+    spark : :py:class:`pyspark.sql.SparkSession`
+        The instatiated SparkSession object that is enabled to interact with S3
+    input_data : str
+        The S3 bucket containing the input song metadata and songplay log data
+    output_data : str
+        Output S3 bucket where to dump the files corresponding to the output
+        tables
+    """
     # get filepath to song data file
     song_data = 
     
@@ -42,6 +59,9 @@ def process_song_data(spark, input_data, output_data):
 
 
 def process_log_data(spark, input_data, output_data):
+    """This function loads the songplay logfiles that holds the events of
+    songplays. This generates the songplays fact table.
+    """
     # get filepath to log data file
     log_data =
 
