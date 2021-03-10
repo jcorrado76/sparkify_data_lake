@@ -127,5 +127,5 @@ It's just, in practice, I changed my `output-data` path to be a location on HDFS
 To use this code, you simply:
 1. spin up an EMR cluster with Spark and HDFS installed
 2. copy the `etl.py` script onto the cluster
-3. then run the command:
-		* `/usr/bin/spark-submit --master yarn /path/to/etl.py`
+3. then run the command:  
+`/usr/bin/spark-submit --master yarn /path/to/etl.py`
