@@ -135,5 +135,5 @@ There is a jupyter notebook file included in the repo for reference to see the e
 In addition, if you choose to save your data down onto HDFS, there is a `push_tables_to_s3.sh` script you can run from the EMR instance that will run the distributed copy to push all the tables into S3.
 
 You run it like this:
-`chmod +x push_tables_to_s3.sh`
+`chmod +x push_tables_to_s3.sh`  
 `./push_tables_to_s3.sh`
